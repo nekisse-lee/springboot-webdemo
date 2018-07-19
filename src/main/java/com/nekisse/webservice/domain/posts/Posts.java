@@ -8,7 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Posts extends BaseTimeEntity {
+public class Posts extends BaseTimeEntity
+{
 
     @Id
     @GeneratedValue

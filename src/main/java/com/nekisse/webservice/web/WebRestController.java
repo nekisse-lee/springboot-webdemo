@@ -1,6 +1,7 @@
 package com.nekisse.webservice.web;
 
 import com.nekisse.webservice.domain.posts.PostsRepository;
+import com.nekisse.webservice.domain.service.PostsService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebRestController {
 
     private PostsRepository postsRepository;
+    private PostsService postsService;
 
     @GetMapping("/hello")
     public String hello() {
@@ -20,7 +22,7 @@ public class WebRestController {
 
     @PostMapping("/posts")
     public void savePots(@RequestBody PostsSaveRequestDto dto) {
-        postsRepository.save(dto.toEntity());
+        postsService.save(dto);
     }
 
 
